@@ -1,0 +1,224 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700");
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+button:hover {
+  cursor: pointer;
+  outline: none;
+}
+button:focus {
+  outline: none;
+}
+
+.logo-todont {
+  color: #00A79D;
+}
+
+.logo-box {
+  color: #6D6E71;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.header {
+  background-color: #E5F3F2;
+  height: 26vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  height: 75%;
+  justify-content: space-around;
+  padding: 5px;
+}
+
+.form input {
+  border: 1px solid #D1D3D4;
+  height: 25px;
+  padding: 2.5px;
+}
+
+.form input, .form button {
+  margin: 5px;
+  font-size: 0.8em;
+}
+
+.form button {
+  height: 30px;
+  background-color: #00A79D;
+  color: #FFF;
+  border: none;
+}
+.form button:hover {
+  background-color: #045E55;
+}
+.form button:disabled, .form button:disabled:hover {
+  cursor: not-allowed;
+  background-color: #939598;
+}
+
+.no-todonts-msg {
+  margin: 10px auto;
+  text-align: center;
+}
+
+.toDont-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #D1D3D4;
+  width: 60%;
+  justify-content: space-around;
+  min-height: 15vh;
+  position: relative;
+}
+
+.card-title {
+  color: #6D6E71;
+  font-size: 2em;
+  font-family: "Roboto Slab", serif;
+  margin-bottom: 10px;
+  max-width: 85%;
+}
+
+.toDont-card h1, .toDont-card p {
+  max-width: 85%;
+}
+
+.toDont-list {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+}
+
+.delete-card {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.delete-card:hover {
+  background-color: #F19C9C;
+  border-radius: 50%;
+  color: #FFF;
+}
+
+.card-btn {
+  font-size: 1em;
+  border: none;
+  background-color: #FFF;
+  min-width: 25px;
+}
+
+.quality-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.card-body {
+  overflow: scroll;
+  max-height: 75px;
+  font-size: 1.2em;
+}
+
+.quality {
+  font-size: 18px;
+  align-self: center;
+}
+
+.quality-rank {
+  font-size: 22px;
+  margin-left: 5px;
+}
+
+.btn-placeholder {
+  font-size: 1em;
+  border: none;
+  background-color: #FFF;
+  min-width: 25px;
+  display: block;
+}
+
+.vote-btns {
+  display: flex;
+  flex-direction: row;
+  min-width: 60px;
+  justify-content: space-around;
+  width: 60px;
+}
