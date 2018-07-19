@@ -13,20 +13,8 @@ describe('header component', () => {
     expect(wrapper).toBeDefined()
   });
 
-  it('should call submitIdea when button is clicked', () => {
-   wrapper.instance().submitIdea = jest.fn()
 
-   const submitButton = wrapper.find('button')
-
-   submitButton.simulate('click')
-
-   expect(wrapper.instance().submitIdea).toHaveBeenCalledTimes(1)
-})
-
-
-  it('should call submitIdea and update state when button is clicked', () => {
-   wrapper.instance().submitIdea = jest.fn()
-
+  it('should update state when input values are changed', () => {
    const titleInput = wrapper.find('input').first()
    const bodyInput = wrapper.find('input').filterWhere(x => x.props().placeholder === 'Body')
    const submitButton = wrapper.find('button')
@@ -34,13 +22,22 @@ describe('header component', () => {
    titleInput.simulate('change', { target: { value: 'title 1'}})
    bodyInput.simulate('change', { target: { value: 'body 1'}})
 
+   expect(wrapper.state().title).toEqual('title 1')
+   expect(wrapper.state().body).toEqual('body 1')
+  })
+
+  it('should call submitIdea when button is clicked', () => {
+   wrapper.instance().submitIdea = jest.fn()
+
+   const submitButton = wrapper.find('button')
+
    submitButton.simulate('click')
 
    expect(wrapper.instance().submitIdea).toHaveBeenCalled()
    expect(wrapper.instance().submitIdea).toHaveBeenCalledTimes(1)
   })
 
-  it('should call this.props.addToDont and clear state fields', () => {
+  it('should call this.props.addToDont and clear state fields when submitIdea is fired', () => {
    const mockFn = jest.fn()
    wrapper = mount(<Header addToDont={ mockFn }/>)
 
